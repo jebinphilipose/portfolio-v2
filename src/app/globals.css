@@ -89,3 +89,9 @@
     color: var(--tag-text);
   }
 }
+
+/* Remove auto-added quote characters from prose blockquotes */
+.prose blockquote p:first-of-type::before,
+.prose blockquote p:last-of-type::after {
+  content: none !important;
+}

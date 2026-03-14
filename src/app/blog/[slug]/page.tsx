@@ -4,6 +4,40 @@ import { notFound } from 'next/navigation'
 import { ArrowLeft, Clock } from 'lucide-react'
 import { PageShell } from '@/components/PageShell'
 import { getAllBlogPosts, getBlogPostBySlug, formatDate } from '@/lib/content'
+import { marked, Renderer } from 'marked'
+
+// Custom renderer: open all links in a new tab
+const renderer = new Renderer()
+renderer.link = ({ href, title, text }: { href: string; title?: string | null; text: string }) => {
+  const titleAttr = title ? ` title="${title}"` : ''
+  return `<a href="${href}"${titleAttr} target="_blank" rel="noopener noreferrer">${text}</a>`
+}
+marked.use({ renderer })
+
+// Post-process marked HTML to convert GitHub-style alert blocks into styled callouts
+function parseMarkdown(content: string): string {
+  const html = marked.parse(content) as string
+
+  const alertTypes: Record<string, { bg: string; border: string; title: string; icon: string }> = {
+    NOTE:      { bg: 'rgba(9,105,218,0.08)',   border: '#0969da', title: '#0969da', icon: 'ℹ️' },
+    TIP:       { bg: 'rgba(26,127,55,0.08)',   border: '#1a7f37', title: '#1a7f37', icon: '💡' },
+    IMPORTANT: { bg: 'rgba(130,80,223,0.08)',  border: '#8250df', title: '#8250df', icon: '🔔' },
+    WARNING:   { bg: 'rgba(154,103,0,0.08)',   border: '#9a6700', title: '#9a6700', icon: '⚠️' },
+    CAUTION:   { bg: 'rgba(207,34,46,0.08)',   border: '#cf222e', title: '#cf222e', icon: '🚫' },
+  }
+
+  return html.replace(
+    /<blockquote>\s*<p>\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]\s*([\s\S]*?)<\/p>\s*<\/blockquote>/g,
+    (_match, type: string, body: string) => {
+      const t = alertTypes[type]
+      const label = type.charAt(0) + type.slice(1).toLowerCase()
+      return `<div style="background:${t.bg};border-left:4px solid ${t.border};border-radius:6px;padding:12px 16px;margin:16px 0">
+  <div style="font-weight:700;margin-bottom:4px;color:${t.title}">${t.icon} ${label}</div>
+  <div>${body.trim()}</div>
+</div>`
+    }
+  )
+}
 
 interface Props {
   params: { slug: string }
@@ -67,9 +101,9 @@ export default function BlogPostPage({ params }: Props) {
 
         <hr className="border-slate-200 dark:border-slate-800 mb-12" />
 
-        <article className="prose prose-slate dark:prose-invert max-w-none prose-headings:font-bold prose-headings:tracking-tight prose-a:text-primary prose-a:no-underline hover:prose-a:underline prose-code:text-primary prose-code:bg-primary/5 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:font-medium prose-code:before:content-none prose-code:after:content-none">
+        <article className="prose prose-slate dark:prose-invert max-w-none prose-headings:font-bold prose-headings:tracking-tight prose-a:text-primary prose-a:no-underline hover:prose-a:underline prose-code:text-primary prose-code:bg-primary/5 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:font-medium prose-code:before:content-none prose-code:after:content-none prose-blockquote:before:content-none prose-blockquote:after:content-none">
           <div
-            dangerouslySetInnerHTML={{ __html: markdownToHtml(post.content) }}
+            dangerouslySetInnerHTML={{ __html: parseMarkdown(post.content) }}
           />
         </article>
       </div>
@@ -77,18 +111,3 @@ export default function BlogPostPage({ params }: Props) {
   )
 }
 
-// Simple markdown to HTML for the content display
-function markdownToHtml(markdown: string): string {
-  return markdown
-    .replace(/^## (.+)$/gm, '<h2>$1</h2>')
-    .replace(/^### (.+)$/gm, '<h3>$1</h3>')
-    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-    .replace(/`(.+?)`/g, '<code>$1</code>')
-    .replace(/^- (.+)$/gm, '<li>$1</li>')
-    .replace(/(<li>[\s\S]+?<\/li>)/g, '<ul>$1</ul>')
-    .replace(/\n\n/g, '</p><p>')
-    .replace(/^(?!<[h|u|l])(.+)$/gm, '<p>$1</p>')
-    .replace(/<p><\/p>/g, '')
-    .replace(/<p>(<[hul])/g, '$1')
-    .replace(/(<\/[hul][^>]*>)<\/p>/g, '$1')
-}
