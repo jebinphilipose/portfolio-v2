@@ -5,15 +5,12 @@ import { PageShell } from '@/components/PageShell'
 import {
   Github,
   Linkedin,
-  MessageSquare,
-  Rocket,
   Mail,
   FileText,
   ExternalLink,
-  GitBranch,
   Layers,
   Cpu,
-  Workflow,
+  CloudCog,
   Zap,
   Network,
 } from 'lucide-react'
@@ -39,7 +36,7 @@ import {
   SiClojure,
   SiGooglecloud,
 } from 'react-icons/si'
-import { FaAws, FaJava } from 'react-icons/fa'
+import { FaAws, FaJava, FaStackExchange, FaAngellist } from 'react-icons/fa'
 import { TbBrandCpp } from 'react-icons/tb'
 
 export const metadata: Metadata = {
@@ -77,7 +74,7 @@ const techStack = [
   { label: 'Docker', icon: SiDocker, color: 'bg-sky-500/10', iconColor: '#2496ED' },
   { label: 'Kubernetes', icon: SiKubernetes, color: 'bg-blue-600/10', iconColor: '#326CE5' },
   { label: 'Git', icon: SiGit, color: 'bg-orange-600/10', iconColor: '#F05032' },
-  { label: 'CI/CD', icon: Workflow, color: 'bg-violet-500/10', iconColor: '#7C3AED' },
+  { label: 'CI/CD', icon: CloudCog, color: 'bg-violet-500/10', iconColor: '#7C3AED' },
   // Architecture & Practices
   { label: 'REST API Design', icon: Network, color: 'bg-teal-500/10', iconColor: '#0D9488' },
   { label: 'Microservices', icon: Layers, color: 'bg-indigo-500/10', iconColor: '#6366F1' },
@@ -88,8 +85,8 @@ const techStack = [
 const connectLinks = [
   { href: 'https://github.com/jebinphilipose/', label: 'GitHub', icon: Github, variant: 'dark' as const },
   { href: 'https://in.linkedin.com/in/jebin-philipose/', label: 'LinkedIn', icon: Linkedin, variant: 'primary' as const },
-  { href: 'https://stackexchange.com/users/9958388/jebin-philipose?tab=accounts/', label: 'StackExchange', icon: MessageSquare, variant: 'default' as const },
-  { href: 'https://angel.co/u/jebinphilipose/', label: 'AngelList', icon: Rocket, variant: 'default' as const },
+  { href: 'https://stackexchange.com/users/9958388/jebin-philipose?tab=accounts/', label: 'StackExchange', icon: FaStackExchange, variant: 'default' as const },
+  { href: 'https://angel.co/u/jebinphilipose/', label: 'AngelList', icon: FaAngellist, variant: 'default' as const },
   { href: 'mailto:contact@jebinphilipose.dev', label: 'Email', icon: Mail, variant: 'default' as const },
   { href: '/Jebin_Philipose_Senior_Backend_Engineer.pdf', label: 'Resume', icon: FileText, variant: 'default' as const },
 ]
