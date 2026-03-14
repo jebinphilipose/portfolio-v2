@@ -61,8 +61,26 @@ export default function BlogPostPage({ params }: Props) {
   const post = getBlogPostBySlug(params.slug)
   if (!post) notFound()
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: post.date,
+    author: {
+      '@type': 'Person',
+      name: 'Jebin Philipose',
+      url: 'https://jebinphilipose.com',
+    },
+    url: `https://jebinphilipose.com/blog/${post.slug}`,
+  }
+
   return (
     <PageShell>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="mb-12">
         <Link
           href="/blog"

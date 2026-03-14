@@ -4,7 +4,7 @@ import type { MetadataRoute } from 'next'
 export default function sitemap(): MetadataRoute.Sitemap {
     const posts = getAllBlogPosts()
     const projects = getAllProjects()
-    const base = 'https://your-domain.com'
+    const base = 'https://jebinphilipose.com'
 
     return [
         { url: `${base}/about`, lastModified: new Date(), priority: 1.0 },

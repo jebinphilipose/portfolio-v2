@@ -9,7 +9,7 @@ export function PageShell({ children }: PageShellProps) {
   return (
     <div className="relative flex min-h-screen w-full flex-col max-w-2xl mx-auto px-6 py-12">
       <Nav />
-      <main className="flex-1 w-full">{children}</main>
+      <main id="main-content" className="flex-1 w-full">{children}</main>
       <Footer />
     </div>
   )

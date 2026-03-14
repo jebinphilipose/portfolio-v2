@@ -11,6 +11,7 @@ const spaceGrotesk = Space_Grotesk({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://jebinphilipose.com'),
   title: {
     default: 'Jebin Philipose | Senior Software Engineer',
     template: '%s | Jebin Philipose',
@@ -29,6 +30,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Jebin Philipose' }],
   creator: 'Jebin Philipose',
+  alternates: {
+    canonical: 'https://jebinphilipose.com',
+  },
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: '48x48' },
@@ -79,6 +83,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className={spaceGrotesk.variable}>
       <body suppressHydrationWarning className="bg-bg-light dark:bg-bg-dark font-display text-slate-900 dark:text-slate-100 antialiased transition-colors duration-300">
+        <a href="#main-content" className="skip-nav">Skip to main content</a>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           {children}
         </ThemeProvider>

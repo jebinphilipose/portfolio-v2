@@ -11,7 +11,7 @@ export function Footer() {
         style={{ color: 'var(--muted-text)' }}
       >
         <span>© {new Date().getFullYear()} Jebin Philipose. Built with</span>
-        <Heart size={14} className="text-red-500 fill-red-500" aria-label="love" />
+        <Heart size={14} className="text-red-500 fill-red-500" aria-hidden="true" />
         <span>and Next.js. Designed using</span>
         <span className="whitespace-nowrap">Google Stitch.</span>
       </p>

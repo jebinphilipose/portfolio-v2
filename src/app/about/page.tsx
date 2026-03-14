@@ -92,8 +92,25 @@ const connectLinks = [
 ]
 
 export default function AboutPage() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Jebin Philipose',
+    url: 'https://jebinphilipose.com',
+    jobTitle: 'Senior Software Engineer',
+    description: 'Senior Software Engineer with 4+ years of experience building scalable B2B SaaS products.',
+    sameAs: [
+      'https://github.com/jebinphilipose',
+      'https://in.linkedin.com/in/jebin-philipose',
+    ],
+  }
+
   return (
     <PageShell>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Profile Section */}
       <header className="flex flex-col items-center text-center mb-16">
         <div className="relative group mb-10">
