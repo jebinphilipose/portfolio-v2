@@ -91,7 +91,7 @@ const connectLinks = [
   { href: 'https://stackexchange.com/users/9958388/jebin-philipose?tab=accounts/', label: 'StackExchange', icon: MessageSquare, variant: 'default' as const },
   { href: 'https://angel.co/u/jebinphilipose/', label: 'AngelList', icon: Rocket, variant: 'default' as const },
   { href: 'mailto:contact@jebinphilipose.dev', label: 'Email', icon: Mail, variant: 'default' as const },
-  { href: '/resume.pdf', label: 'Resume', icon: FileText, variant: 'default' as const },
+  { href: '/Jebin_Philipose_Senior_Backend_Engineer.pdf', label: 'Resume', icon: FileText, variant: 'default' as const },
 ]
 
 export default function AboutPage() {
