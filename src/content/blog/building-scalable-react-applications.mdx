@@ -1,0 +1,28 @@
+---
+title: "Building Scalable React Applications"
+date: "2023-10-24"
+category: "Architecture"
+excerpt: "Exploring state management, component composition, and performance optimization techniques. A deep dive into architectural patterns for modern web apps."
+slug: "building-scalable-react-applications"
+readingTime: "8 min read"
+---
+
+## Introduction
+
+Building scalable React applications requires careful consideration of state management, component architecture, and performance optimization from the very beginning.
+
+## State Management Patterns
+
+When your application grows, local component state becomes insufficient. Consider these approaches:
+
+- **Context API** for global UI state (theme, locale)
+- **Zustand** for lightweight global state
+- **React Query / TanStack Query** for server state
+
+## Component Composition
+
+Favor composition over inheritance. Small, focused components with clear contracts are easier to test and maintain.
+
+## Performance Optimization
+
+Use `React.memo`, `useMemo`, and `useCallback` strategically — not everywhere. Profile first, optimize second.

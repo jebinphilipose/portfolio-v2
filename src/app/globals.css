@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: #135bec;
+    --color-bg-light: #faf9f6;
+    --color-bg-dark: #101622;
+
+    /* Light theme surface tokens */
+    --card-bg: #ffffff;
+    --card-border: #e8e5de;
+    --tag-bg: #f3f1eb;
+    --tag-text: #5a5449;
+    --muted-text: #6b655a;
+    --heading-text: #1a1814;
+    --toggle-bg: #ede9e1;
+    --toggle-border: #d8d3c8;
+    --footer-border: #e8e5de;
+  }
+
+  .dark {
+    --card-bg: rgb(15 22 34 / 0.4);
+    --card-border: #1e293b;
+    --tag-bg: rgb(30 41 59 / 0.5);
+    --tag-text: #94a3b8;
+    --muted-text: #94a3b8;
+    --heading-text: #ffffff;
+    --toggle-bg: #1e293b;
+    --toggle-border: rgb(51 65 85 / 0.5);
+    --footer-border: #1e293b;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Space Grotesk', sans-serif;
+    min-height: 100dvh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #2d3748; border-radius: 10px; }
+  ::-webkit-scrollbar-thumb:hover { background: #4a5568; }
+
+  :focus-visible {
+    outline: 2px solid #135bec;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Warm Cream light theme overrides */
+  .card-surface {
+    background-color: var(--card-bg);
+    border-color: var(--card-border);
+  }
+
+  .tag-surface {
+    background-color: var(--tag-bg);
+    color: var(--tag-text);
+  }
+}
