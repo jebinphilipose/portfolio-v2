@@ -35,6 +35,8 @@ import {
   SiJavascript,
   SiClojure,
   SiGooglecloud,
+  SiUdacity,
+  SiCodechef,
 } from 'react-icons/si'
 import { FaAws, FaJava, FaStackExchange, FaAngellist } from 'react-icons/fa'
 import { TbBrandCpp } from 'react-icons/tb'
@@ -80,6 +82,34 @@ const techStack = [
   { label: 'Microservices', icon: Layers, color: 'bg-indigo-500/10', iconColor: '#6366F1' },
   { label: 'System Design', icon: Cpu, color: 'bg-purple-500/10', iconColor: '#9333EA' },
   { label: 'Performance Optimization', icon: Zap, color: 'bg-amber-500/10', iconColor: '#F59E0B' },
+]
+
+const certifications = [
+  {
+    label: 'ICPC',
+    description: 'ICPC Asia Kolkata-Kanpur Regionals 2018',
+    href: 'https://icpc.global/ICPCID/NKANW920C4X3/',
+    imageSrc: '/icpc-logo.png',
+    icon: null,
+    iconColor: '',
+    accentColor: 'bg-neutral-500/10',
+  },
+  {
+    label: 'Udacity',
+    description: 'Full Stack Web Developer Nanodegree',
+    href: 'https://www.udacity.com/certificate/9TACEKES',
+    icon: SiUdacity,
+    iconColor: '#02B3E4',
+    accentColor: 'bg-sky-500/10',
+  },
+  {
+    label: 'CodeChef',
+    description: 'CodeChef DSA  Foundation Level Certification',
+    href: 'https://www.codechef.com/certificates/public/bc2d46c/',
+    icon: SiCodechef,
+    iconColor: '#5B4638',
+    accentColor: 'bg-amber-800/10',
+  },
 ]
 
 const connectLinks = [
@@ -178,6 +208,38 @@ export default function AboutPage() {
               <ExternalLink size={20} aria-hidden="true" />
             </a>
           </div>
+        </div>
+      </section>
+
+      {/* Certifications */}
+      <section className="mb-16 text-center" aria-labelledby="certifications-heading">
+        <h2 id="certifications-heading" className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-8">
+          Certifications
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          {certifications.map(({ label, description, href, icon: Icon, iconColor, accentColor, imageSrc }) => (
+            <a
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col gap-3 p-5 rounded-xl text-left transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
+              style={{ background: 'var(--card-bg)', border: '1px solid var(--card-border)' }}
+            >
+              <div className="flex items-center justify-between">
+                <span className={`flex items-center justify-center size-10 rounded-lg ${accentColor}`} aria-hidden="true">
+                  {imageSrc
+                    ? <Image src={imageSrc} alt={label} width={40} height={28} className="object-contain" />
+                    : Icon && <Icon size={20} style={{ color: iconColor }} />}
+                </span>
+                <ExternalLink size={14} className="text-primary opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
+              </div>
+              <div>
+                <p className="font-bold text-sm mb-1" style={{ color: 'var(--heading-text)' }}>{label}</p>
+                <p className="text-xs leading-relaxed" style={{ color: 'var(--muted-text)' }}>{description}</p>
+              </div>
+            </a>
+          ))}
         </div>
       </section>
 
