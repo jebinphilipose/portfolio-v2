@@ -37,8 +37,15 @@ import {
   SiGooglecloud,
   SiUdacity,
   SiCodechef,
+  SiStackexchange,
 } from 'react-icons/si'
-import { FaAws, FaJava, FaStackExchange, FaAngellist } from 'react-icons/fa'
+import { FaAws, FaJava } from 'react-icons/fa'
+
+const WellfoundIcon = ({ size = 18 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M4 4h3.6l2.8 9.4L13 4h3l2.6 9.4L21.4 4H25v.1l-4.8 16H17L14.5 11 12 20h-3.2L4 4.1V4z" />
+  </svg>
+)
 import { TbBrandCpp } from 'react-icons/tb'
 
 export const metadata: Metadata = {
@@ -115,8 +122,8 @@ const certifications = [
 const connectLinks = [
   { href: 'https://github.com/jebinphilipose/', label: 'GitHub', icon: Github, variant: 'dark' as const },
   { href: 'https://in.linkedin.com/in/jebin-philipose/', label: 'LinkedIn', icon: Linkedin, variant: 'primary' as const },
-  { href: 'https://stackexchange.com/users/9958388/jebin-philipose?tab=accounts/', label: 'StackExchange', icon: FaStackExchange, variant: 'default' as const },
-  { href: 'https://angel.co/u/jebinphilipose/', label: 'AngelList', icon: FaAngellist, variant: 'default' as const },
+  { href: 'https://stackexchange.com/users/9958388/jebin-philipose?tab=accounts/', label: 'StackExchange', icon: SiStackexchange, variant: 'default' as const },
+  { href: 'https://wellfound.com/u/jebinphilipose/', label: 'Wellfound', icon: WellfoundIcon, variant: 'default' as const },
   { href: 'mailto:contact@jebinphilipose.dev', label: 'Email', icon: Mail, variant: 'default' as const },
   { href: '/Jebin_Philipose_Senior_Backend_Engineer.pdf', label: 'Resume', icon: FileText, variant: 'default' as const },
 ]
