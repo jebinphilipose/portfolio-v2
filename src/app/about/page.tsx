@@ -138,7 +138,7 @@ export default function AboutPage() {
             0 → 1, translating complex business requirements into reliable,
             production-grade systems. My core strength lies in designing
             architectures that scale efficiently under load. I work primarily with{' '}
-            <span className="text-primary font-semibold">Python (Django), PostgreSQL, Redis, Celery, Docker, AWS</span>
+            <span className="text-primary font-semibold">Python, Django, PostgreSQL, Redis, Celery, Docker, AWS</span>
             , and modern microservices patterns, and have a strong track record of
             optimizing performance, reducing infrastructure costs, and eliminating
             system bottlenecks. I enjoy solving hard engineering problems—whether

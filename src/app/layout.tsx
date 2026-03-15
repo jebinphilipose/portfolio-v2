@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     template: '%s | Jebin Philipose',
   },
   description:
-    'Senior Software Engineer with 4+ years of experience building scalable B2B SaaS products. Specializing in Python (Django), Node.js, AWS, and PostgreSQL.',
+    'Senior Software Engineer with 4+ years of experience building scalable B2B SaaS products. Specializing in Python, Django, Node.js, AWS, and PostgreSQL.',
   keywords: [
     'software engineer',
     'backend engineer',
