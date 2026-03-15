@@ -19,11 +19,11 @@ function parseMarkdown(content: string): string {
   const html = marked.parse(content) as string
 
   const alertTypes: Record<string, { bg: string; border: string; title: string; icon: string }> = {
-    NOTE:      { bg: 'rgba(9,105,218,0.08)',   border: '#0969da', title: '#0969da', icon: 'ℹ️' },
-    TIP:       { bg: 'rgba(26,127,55,0.08)',   border: '#1a7f37', title: '#1a7f37', icon: '💡' },
-    IMPORTANT: { bg: 'rgba(130,80,223,0.08)',  border: '#8250df', title: '#8250df', icon: '🔔' },
-    WARNING:   { bg: 'rgba(154,103,0,0.08)',   border: '#9a6700', title: '#9a6700', icon: '⚠️' },
-    CAUTION:   { bg: 'rgba(207,34,46,0.08)',   border: '#cf222e', title: '#cf222e', icon: '🚫' },
+    NOTE: { bg: 'rgba(9,105,218,0.08)', border: '#0969da', title: '#0969da', icon: 'ℹ️' },
+    TIP: { bg: 'rgba(26,127,55,0.08)', border: '#1a7f37', title: '#1a7f37', icon: '💡' },
+    IMPORTANT: { bg: 'rgba(130,80,223,0.08)', border: '#8250df', title: '#8250df', icon: '🔔' },
+    WARNING: { bg: 'rgba(154,103,0,0.08)', border: '#9a6700', title: '#9a6700', icon: '⚠️' },
+    CAUTION: { bg: 'rgba(207,34,46,0.08)', border: '#cf222e', title: '#cf222e', icon: '🚫' },
   }
 
   return html.replace(
@@ -70,9 +70,9 @@ export default function BlogPostPage({ params }: Props) {
     author: {
       '@type': 'Person',
       name: 'Jebin Philipose',
-      url: 'https://jebinphilipose.com',
+      url: 'https://jebinphilipose.dev',
     },
-    url: `https://jebinphilipose.com/blog/${post.slug}`,
+    url: `https://jebinphilipose.dev/blog/${post.slug}`,
   }
 
   return (

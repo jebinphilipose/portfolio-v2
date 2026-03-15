@@ -96,7 +96,7 @@ export default function AboutPage() {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: 'Jebin Philipose',
-    url: 'https://jebinphilipose.com',
+    url: 'https://jebinphilipose.dev',
     jobTitle: 'Senior Software Engineer',
     description: 'Senior Software Engineer with 4+ years of experience building scalable B2B SaaS products.',
     sameAs: [

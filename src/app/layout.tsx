@@ -11,7 +11,7 @@ const spaceGrotesk = Space_Grotesk({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://jebinphilipose.com'),
+  metadataBase: new URL('https://jebinphilipose.dev'),
   title: {
     default: 'Jebin Philipose | Senior Software Engineer',
     template: '%s | Jebin Philipose',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   authors: [{ name: 'Jebin Philipose' }],
   creator: 'Jebin Philipose',
   alternates: {
-    canonical: 'https://jebinphilipose.com',
+    canonical: 'https://jebinphilipose.dev',
   },
   icons: {
     icon: [
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://jebinphilipose.com',
+    url: 'https://jebinphilipose.dev',
     title: 'Jebin Philipose | Senior Software Engineer',
     description:
       'Senior Software Engineer with 4+ years of experience building scalable B2B SaaS products.',
