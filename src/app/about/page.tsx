@@ -57,7 +57,7 @@ export const metadata: Metadata = {
 const techStack = [
   // Languages
   { label: 'Python', icon: SiPython, color: 'bg-yellow-500/10', iconColor: '#3776AB' },
-  { label: 'JavaScript (ES6)', icon: SiJavascript, color: 'bg-yellow-400/10', iconColor: '#F7DF1E' },
+  { label: 'JavaScript', icon: SiJavascript, color: 'bg-yellow-400/10', iconColor: '#F7DF1E' },
   { label: 'Java', icon: FaJava, color: 'bg-red-500/10', iconColor: '#ED8B00' },
   { label: 'C++', icon: TbBrandCpp, color: 'bg-blue-600/10', iconColor: '#00599C' },
   { label: 'Clojure', icon: SiClojure, color: 'bg-green-600/10', iconColor: '#5881D8' },
