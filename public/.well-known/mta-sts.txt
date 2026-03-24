@@ -1,5 +1,6 @@
 version: STSv1
 mode: enforce
-mx: mxa.mailgun.org
-mx: mxb.mailgun.org
+id: 20260324120000Z
+mx: mx1.improvmx.com
+mx: mx2.improvmx.com
 max_age: 604800
