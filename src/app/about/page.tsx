@@ -156,8 +156,8 @@ export default function AboutPage() {
             <Image
               src="/profile.webp"
               alt="Jebin Philipose"
-              width={128}
-              height={128}
+              width={1023}
+              height={1024}
               priority
               className="rounded-full w-28 h-28 md:w-32 md:h-32 object-cover"
             />
