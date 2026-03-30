@@ -7,6 +7,9 @@ import { getAllBlogPosts, formatDate } from '@/lib/content'
 export const metadata: Metadata = {
   title: 'Blog',
   description: 'Thoughts on software engineering, and building products.',
+  alternates: {
+    canonical: '/blog',
+  },
 }
 
 export default function BlogPage() {

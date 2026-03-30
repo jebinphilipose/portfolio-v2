@@ -30,9 +30,6 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Jebin Philipose' }],
   creator: 'Jebin Philipose',
-  alternates: {
-    canonical: 'https://jebinphilipose.dev',
-  },
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: '48x48' },

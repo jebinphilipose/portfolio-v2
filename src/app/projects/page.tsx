@@ -8,6 +8,9 @@ import { getAllProjects } from '@/lib/content'
 export const metadata: Metadata = {
   title: 'Projects',
   description: 'A collection of technical projects — each represents a challenge I loved tackling.',
+  alternates: {
+    canonical: '/projects',
+  },
 }
 
 export default function ProjectsPage() {

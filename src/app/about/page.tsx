@@ -52,6 +52,9 @@ export const metadata: Metadata = {
   title: 'About',
   description:
     'Senior Software Engineer with 4+ years of experience building scalable B2B SaaS products.',
+  alternates: {
+    canonical: '/about',
+  },
 }
 
 const techStack = [
